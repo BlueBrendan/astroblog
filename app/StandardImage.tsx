@@ -1,0 +1,31 @@
+import Image from "next/image";
+import FadeIn from "./FadeIn";
+
+export const StandardImage = ({
+  photo,
+  setSelected,
+  index,
+}: {
+  photo: any;
+  setSelected: any;
+  index: number;
+}) => {
+  return (
+    <FadeIn key={photo.src} delay={(index % 3) * 100}>
+      <button
+        onClick={
+          () => setSelected(index)
+        }
+        className="relative aspect-[4/3] overflow-hidden outline-none w-full"
+      >
+        <Image
+          src={photo.src}
+          alt={photo.alt}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover hover:scale-102 transition-transform"
+        />
+      </button>
+    </FadeIn>
+  );
+};
