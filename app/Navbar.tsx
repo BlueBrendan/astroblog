@@ -13,7 +13,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-gray-200">
+    <nav className="sticky top-0 z-40 bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-8 h-16 flex items-center gap-8">
         {links.map((link) => {
           const isActive = pathname === link.href;
@@ -23,8 +23,8 @@ export default function Navbar() {
               href={link.href}
               className={`text-sm font-medium transition-colors select-none ${
                 isActive
-                  ? "text-black"
-                  : "text-gray-500 hover:text-black"
+                  ? "text-white"
+                  : "text-gray-400 hover:text-white/80"
               }`}
             >
               {link.label}
