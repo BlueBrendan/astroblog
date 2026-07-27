@@ -6,7 +6,7 @@ export const FeaturedImage = ({photo, setSelected, index}: {photo: any, setSelec
         <FadeIn className="col-span-1 sm:col-span-2 lg:col-span-3 row-span-2" key={photo.src} delay={(index % 3) * 100}>
             <div
                 key={photo.src}
-                className="col-span-1 sm:col-span-2 lg:col-span-3 row-span-2 grid grid-cols-1 sm:grid-cols-3 gap-4 py-4 select-none"
+                className="col-span-1 sm:col-span-2 lg:col-span-3 row-span-2 grid grid-cols-1 sm:grid-cols-3 gap-4 py-4"
                 >
                 <button
                     onClick={() => setSelected(index)}
@@ -19,13 +19,13 @@ export const FeaturedImage = ({photo, setSelected, index}: {photo: any, setSelec
                     draggable={false}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 66vw, 66vw"
-                    className="object-cover hover:scale-102 transition-transform"
+                    className="object-cover hover:scale-102 transition-transform select-none"
                 />
                 </button>
                 <div className="flex flex-col justify-center gap-2">
-                    <h3 className="text-3xl font-medium select-none">{photo.title}</h3>
-                    {photo.year && <p className="text-lg text-gray-500 select-none">{photo.year}</p>}
-                    {photo.description && <p className="text-md mt-2 select-none">{photo.description}</p>}
+                    <h3 className="text-3xl font-medium">{photo.title}</h3>
+                    {photo.year && <p className="text-lg text-gray-500">{photo.year}</p>}
+                    {photo.description && <p className="text-md mt-2">{photo.description}</p>}
                 </div>
             </div>
         </FadeIn>

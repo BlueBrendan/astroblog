@@ -24,7 +24,7 @@ export const StandardImage = ({
           draggable={false}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover hover:scale-102 transition-transform"
+          className="object-cover hover:scale-102 transition-transform select-none"
         />
       </button>
     </FadeIn>

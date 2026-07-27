@@ -9,9 +9,9 @@ export const landscapePhotos = [
 
     { 
         src: "/images/landscape/2024/tunnel-view-bridalveil.jpg",
-        title: "Tunnel View Bridalveil",
+        title: "Bridalveil Fall",
         year: 2024, 
-        description: "Early morning Bridalveil Falls at Yosemite National Park",
+        description: "Bridalveil Falls at Yosemite National Park in the early hours of the morning.",
         alt: "Bridalveil Falls at Yosemite National Park",
         featured: true
     },
@@ -27,11 +27,10 @@ export const landscapePhotos = [
         src: "/images/landscape/2025/song-kul-lake-yurts.jpg", 
         title: "Song-Kul Lake",
         year: 2025, 
-        description: "Yurts at Song-Kul Lake, Kyrgyzstan",
+        description: "Tranquil yurts at Song-Kul Lake in Kyrgyzstan.",
         alt: "Song-Kul Lake", 
         featured: true
     },
-
 
     // Row 3
     { src: "/images/landscape/2024/cinder-cone.jpg", year: 2024, alt: "Cinder Cone at Lassen National Park" },

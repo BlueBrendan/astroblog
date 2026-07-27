@@ -53,6 +53,40 @@ export const SelectedImage = ({
             <div className="h-8 w-8 border-2 border-white/40 border-t-white rounded-full animate-spin" />
           </div>
         )}
+
+        {/* Info button + tooltip */}
+        {loaded && (
+          <div
+            className="group absolute top-3 right-3 sm:top-4 sm:right-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="flex items-center justify-center h-8 w-8 rounded-full bg-black/50 backdrop-blur-sm text-white/90 hover:bg-black/70 transition-colors outline-none"
+              aria-label="Image details"
+            >
+              <span className="text-sm font-serif italic">i</span>
+            </button>
+
+            <div
+              className="absolute top-10 right-0 w-64 rounded-lg bg-black/80 backdrop-blur-md p-4 text-white opacity-0 scale-95 pointer-events-none transition-all duration-200 ease-out group-hover:opacity-100 group-hover:scale-100"
+            >
+              <h3 className="text-m font-medium">{photo.title}</h3>
+              {photo.year && (
+                <p className="text-sm text-gray-400 mt-0.5">{photo.year}</p>
+              )}
+              {photo.location && (
+                <p className="text-sm text-gray-300 mt-2 leading-relaxed">
+                  {photo.location}
+                </p>
+              )}
+                {photo.description && (
+                  <p className="text-sm text-gray-300 mt-2 leading-relaxed">
+                {photo.description}
+                </p>
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
