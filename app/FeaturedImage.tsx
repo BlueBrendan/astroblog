@@ -16,6 +16,7 @@ export const FeaturedImage = ({photo, setSelected, index}: {photo: any, setSelec
                 <Image
                     src={photo.src}
                     alt={photo.alt}
+                    draggable={false}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 66vw, 66vw"
                     className="object-cover hover:scale-102 transition-transform"

@@ -48,7 +48,7 @@ export default function Gallery({photos}: GalleryType) {
 
   return (
     <>
-    <div className="p-4 sm:p-8 lg:p-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="p-4 sm:p-8 lg:p-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 select-none">
       {photos.map((photo, i) =>
         photo.featured ? (
           <FeaturedImage key={i} photo={photo} setSelected={setSelected} index={i}/>
