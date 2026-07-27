@@ -20,7 +20,7 @@ export default function About() {
           </p>
           {/* Mojave Desert Timelapse */}
           <FadeIn>
-            <div className="relative rounded-lg overflow-hidden select-none">
+            <div className="aspect-[16/9] relative rounded-lg overflow-hidden select-none">
              <video autoPlay muted loop playsInline className="w-full rounded-lg">
                <source src={authorPhotos[0].src} type="video/mp4" />
              </video>
