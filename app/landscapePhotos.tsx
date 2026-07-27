@@ -11,7 +11,7 @@ export const landscapePhotos = [
         src: "/images/landscape/2024/tunnel-view-bridalveil.jpg",
         title: "Bridalveil Fall",
         year: 2024, 
-        description: "Bridalveil Falls at Yosemite National Park in the early hours of the morning",
+        description: "Bridalveil Fall at Yosemite National Park in the early hours of the morning",
         alt: "Bridalveil Falls at Yosemite National Park",
         featured: true
     },
