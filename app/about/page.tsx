@@ -119,7 +119,7 @@ export default function About() {
             </p>
           </FadeIn>
           <p className={`${fontSize} leading-relaxed`}>
-            If you're interested in prints, a shoot at a dark-sky location, or have other inquiries, feel free to reach out via the <Link href="/contact" className="hover:text-gray-400  transition-colors">Contact Form</Link>.
+            If you're interested in prints or booking a shoot at a dark-sky location, reach out via the <Link href="/contact" className="hover:text-gray-400  transition-colors">Contact Form</Link>.
           </p>
         </div>
       </div>
