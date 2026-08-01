@@ -58,7 +58,7 @@ export default function ContactForm() {
         }`}
       >
         <p className={`${isMobile ? 'text-xs' : 'text-sm'} font-medium text-black text-center`}>
-          Your message was successfuly delivered!
+          Your message was successfully delivered!
         </p>
       </div>
       <form onSubmit={handleSubmit} className="space-y-5 w-8/7 sm:w-1/4">

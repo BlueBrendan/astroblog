@@ -37,7 +37,7 @@ export const SelectedImage = ({
             fill
             sizes="3000px"
             placeholder={"empty"}
-            quality={85}
+            quality={88}
             onLoad={() => setLoaded(true)}
             priority
             className={`object-cover transition-opacity duration-350 ease-out ${
