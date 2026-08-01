@@ -22,7 +22,7 @@ export const authorPhotos = [
     { 
         src: "/images/author-image-3.jpg", 
         year: 2024, 
-        description: "Imaging the tall granite mountains and rolling fog in Yosemite National Park",
+        description: "Imaging mountains and rolling fog in Yosemite National Park",
         alt: "Yosemite National Park"
     },
     { 
