@@ -9,11 +9,13 @@ import { useIsMobile } from "../isMobile";
 
 export default function About() {
   const isMobile = useIsMobile();
-  const fontSize = isMobile ? 'text-[12px]' : 'text-m';
+  const fontSize = isMobile ? 'text-[13px]' : 'text-m';
+  const captionSize = isMobile ? 'text-xs' : 'text-sm'
+
   return (
     <>
       <Navbar />
-      <div className="max-w-6xl mx-auto px-4 sm:px-8 py-6 ">
+      <div className="max-w-6xl mx-auto px-4 sm:px-8 py-2 ">
         <h1 className={`${isMobile ? "text-xl ": "text-3xl"} font-bold leading-tight mb-4 select-none`}>About Me</h1>
         <div className={`${isMobile ? "space-y-6" : "space-y-10"}`} style={{caretColor: "transparent"}}>
           <p className={`${fontSize} leading-relaxed`}>
@@ -31,7 +33,7 @@ export default function About() {
                <source src={authorPhotos[0].src} type="video/mp4" />
              </video>
             </div>
-            <p className="text-sm text-gray-400 italic text-center mt-2">
+            <p className={`${captionSize} text-gray-400 italic text-center mt-2`}>
               {authorPhotos[0].description}
             </p>
           </FadeIn>
@@ -47,7 +49,7 @@ export default function About() {
           </p>
           {/* Black Rock Desert Image */}
           <FadeIn>
-            <div className="relative aspect-[3/2] overflow-hidden  select-none">
+            <div className="relative aspect-[3/2] rounded-lg overflow-hidden select-none">
               <Image
                 src={authorPhotos[1].src}
                 alt={authorPhotos[1].alt}
@@ -58,7 +60,7 @@ export default function About() {
                 className="object-cover"
               />
             </div>
-            <p className="text-sm text-gray-400 italic text-center mt-2">
+            <p className={`${captionSize} text-gray-400 italic text-center mt-2`}>
               {authorPhotos[1].description}
             </p>
           </FadeIn>
@@ -78,13 +80,13 @@ export default function About() {
                <source src={authorPhotos[2].src} type="video/mp4" />
              </video>
             </div>
-            <p className="text-sm text-gray-400 italic text-center mt-2">
+            <p className={`${captionSize} text-gray-400 italic text-center mt-2`}>
               {authorPhotos[2].description}
             </p>
           </FadeIn>
           {/* Yosemite National Park Image */}
           <FadeIn>
-            <div className="relative aspect-[3/2] overflow-hidden select-none">
+            <div className="relative aspect-[3/2] rounded-lg overflow-hidden select-none">
               <Image
                 src={authorPhotos[3].src}
                 alt={authorPhotos[3].alt}
@@ -95,13 +97,13 @@ export default function About() {
                 className="object-cover"
               />
             </div>
-            <p className="text-sm text-gray-400 italic text-center mt-2">
+            <p className={`${captionSize} text-gray-400 italic text-center mt-2`}>
               {authorPhotos[3].description}
             </p>
           </FadeIn>
           {/* Trona Pinnacles Image */}
           <FadeIn>
-            <div className="relative aspect-[3/2] overflow-hidden select-none">
+            <div className="relative aspect-[3/2] rounded-lg overflow-hidden select-none">
               <Image
                 src={authorPhotos[4].src}
                 alt={authorPhotos[4].alt}
@@ -112,7 +114,7 @@ export default function About() {
                 className="object-cover"
               />
             </div>
-            <p className="text-sm text-gray-400 italic text-center mt-2">
+            <p className={`${captionSize} text-gray-400 italic text-center mt-2`}>
               {authorPhotos[4].description}
             </p>
           </FadeIn>

@@ -47,7 +47,7 @@ export default function ContactForm() {
 
   return (
     <FadeIn>
-    <div className="w-full flex justify-center px-4 sm:px-8 py-20">
+    <div className="w-full flex justify-center px-10 sm:px-8 py-13 ">
       {/* Success tooltip */}
       <div
         className={`fixed top-3 left-1/2 -translate-x-1/2 z-50 rounded-lg bg-green-300 px-5 py-3 shadow-lg transition-all duration-300 select-none ${
@@ -60,7 +60,7 @@ export default function ContactForm() {
           Your message was successfuly delivered!
         </p>
       </div>
-      <form onSubmit={handleSubmit} className="space-y-5 w-6/7 sm:w-1/4">
+      <form onSubmit={handleSubmit} className="space-y-5 w-8/7 sm:w-1/4">
         <div className="flex flex-col sm:flex-row gap-5">
           <div className="select-none w-full sm:w-1/2">
             <label htmlFor="name" className="block text-sm text-gray-400 mb-1.5 select-none">
@@ -106,7 +106,6 @@ export default function ContactForm() {
             placeholder="Your message"
           />
         </div>
-
         <button
           type="submit"
           disabled={!isComplete}
