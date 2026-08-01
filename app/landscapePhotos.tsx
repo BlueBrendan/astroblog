@@ -22,7 +22,7 @@ export const landscapePhotos = [
     { src: "/images/landscape/2025/long-exposure-donner-pass.jpg", year: 2025, location: "Donner Pass, California", alt: "Donner Pass" },
     { src: "/images/landscape/2024/big-oak-flat-road.jpg", year: 2024, location: "Big Oak Flat Road, California", alt: "Big Oak Flat Road" },
     { src: "/images/landscape/2024/bumpass-hell.jpg", year: 2024, location: "Lassen National Park, California", alt: "Bumpass Hell at Lassen National Park" },
-    { src: "/images/landscape/2024/berma-falls.jpg", year: 2024, location: "Burney Falls, California", alt: "Burney Falls" },
+    { src: "/images/landscape/2024/burney-falls.jpg", year: 2024, location: "Burney Falls, California", alt: "Burney Falls" },
     { 
         src: "/images/landscape/2025/song-kul-lake-yurts.jpg", 
         title: "Song-Kul Lake",
