@@ -10,7 +10,7 @@ export default function ContactForm() {
     email: "",
     message: "",
   });
-  const [showSuccess, setShowSuccess] = useState(true);
+  const [showSuccess, setShowSuccess] = useState(false);
   const successTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isMobile = useIsMobile();
   const isComplete =
@@ -51,7 +51,7 @@ export default function ContactForm() {
     <div className={`w-full flex justify-center px-10 sm:px-8 ${isMobile ? 'py-12' : 'py-20'}`}>
       {/* Success tooltip */}
       <div
-        className={`fixed top-${isMobile ? 0 : 4} left-1/2 -translate-x-1/2 z-50 rounded-lg bg-green-300 px-${isMobile ? 3 : 4} py-${isMobile ? 2 : 3} shadow-lg transition-all duration-300 select-none ${
+        className={`fixed top-${isMobile ? 0 : 4} left-1/2 -translate-x-1/2 z-50 rounded-lg bg-green-300 px-4 py-${isMobile ? 2 : 3} shadow-lg transition-all duration-300 select-none ${
           showSuccess
             ? "opacity-100 translate-y-0"
             : "opacity-0 -translate-y-3 pointer-events-none"

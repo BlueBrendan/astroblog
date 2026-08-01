@@ -25,8 +25,8 @@ export const StandardImage = ({
           alt={photo.alt}
           draggable={false}
           fill
-          quality={85}
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          quality={82}
+          sizes="(max-width: 840px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover hover:scale-102 transition-transform select-none"
         />
       </button>
