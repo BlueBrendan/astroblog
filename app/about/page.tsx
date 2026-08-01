@@ -2,6 +2,13 @@ import Image from "next/image";
 import Navbar from "../Navbar";
 import FadeIn from "../FadeIn";
 import { authorPhotos } from "../authorPhotos";
+import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Brendan Chou | Astrophotography & Landscape Photography",
+  description: "Astrophotography and landscape photography portfolio featuring deep-sky and wide-field images shot across California and Nevada, including Yosemite, Joshua Tree, Death Valley, and Lassen National Park.",
+};
 
 export default function About() {
   return (
@@ -110,6 +117,9 @@ export default function About() {
               {authorPhotos[4].description}
             </p>
           </FadeIn>
+          <p className="text-lg leading-relaxed">
+            If you're interested in prints, a shoot at a dark-sky location, or have other inquiries, feel free to reach out via the <Link href="/contact" className="hover:text-gray-400  transition-colors">Contact Form</Link>.
+          </p>
         </div>
       </div>
     </>

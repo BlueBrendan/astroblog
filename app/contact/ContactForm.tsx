@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import FadeIn from "../FadeIn";
 
 export default function ContactForm() {
   const [form, setForm] = useState({
@@ -22,30 +23,40 @@ export default function ContactForm() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!isComplete) return;
 
-    // TODO: wire this up to your email service (Resend, Formspree, etc.)
-    console.log("Submitting:", form);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
 
-    setForm({ name: "", email: "", message: "" });
-    if (successTimeoutRef.current) clearTimeout(successTimeoutRef.current);
-    setShowSuccess(true);
-    successTimeoutRef.current = setTimeout(() => setShowSuccess(false), 5000);
+      if (!res.ok) throw new Error("Failed to send");
+
+      setForm({ name: "", email: "", message: "" });
+      if (successTimeoutRef.current) clearTimeout(successTimeoutRef.current);
+      setShowSuccess(true);
+      successTimeoutRef.current = setTimeout(() => setShowSuccess(false), 5000);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
+    <FadeIn>
     <div className="w-full flex justify-center px-4 sm:px-8 py-24">
       {/* Success tooltip */}
       <div
-        className={`fixed top-18 left-1/2 -translate-x-1/2 z-50 rounded-lg bg-green-300 px-5 py-3 shadow-lg transition-all duration-300 select-none ${
+        className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 rounded-lg bg-green-300 px-5 py-3 shadow-lg transition-all duration-300 select-none ${
           showSuccess
             ? "opacity-100 translate-y-0"
             : "opacity-0 -translate-y-3 pointer-events-none"
         }`}
       >
-        <p className="text-md font-medium text-black text-center">
+        <p className="text-sm font-medium text-black text-center">
           Your message was successfuly delivered!
         </p>
       </div>
@@ -105,5 +116,6 @@ export default function ContactForm() {
         </button>
       </form>
     </div>
+    </FadeIn>
   );
 }
