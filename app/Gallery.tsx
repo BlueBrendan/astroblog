@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { FeaturedImage } from "./FeaturedImage";
 import { StandardImage } from "./StandardImage";
 import { SelectedImage } from "./SelectedImage";
+import { useIsMobile } from "./isMobile";
 
 interface PhotoItem {
   src: string,
@@ -18,6 +19,8 @@ interface GalleryType {
 export default function Gallery({photos}: GalleryType) {
   const [selected, setSelected] = useState<number | null>(null);
   const [visible, setVisible] = useState(false);
+  const isMobile = useIsMobile();
+
 
   useEffect(() => {
     if (selected !== null) {
@@ -48,9 +51,9 @@ export default function Gallery({photos}: GalleryType) {
 
   return (
     <>
-    <div className="p-4 sm:p-8 lg:p-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" style={{caretColor: "transparent"}}>
+    <div className="p-2 sm:p-8 lg:p-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" style={{caretColor: "transparent"}}>
       {photos.map((photo, i) =>
-        photo.featured ? (
+        photo.featured && !isMobile ? (
           <FeaturedImage key={i} photo={photo} setSelected={setSelected} index={i}/>
         ) : (
           <StandardImage key={i} photo={photo} setSelected={setSelected} index={i}/>

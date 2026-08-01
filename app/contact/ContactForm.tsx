@@ -47,10 +47,10 @@ export default function ContactForm() {
 
   return (
     <FadeIn>
-    <div className="w-full flex justify-center px-4 sm:px-8 py-24">
+    <div className="w-full flex justify-center px-4 sm:px-8 py-20">
       {/* Success tooltip */}
       <div
-        className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 rounded-lg bg-green-300 px-5 py-3 shadow-lg transition-all duration-300 select-none ${
+        className={`fixed top-3 left-1/2 -translate-x-1/2 z-50 rounded-lg bg-green-300 px-5 py-3 shadow-lg transition-all duration-300 select-none ${
           showSuccess
             ? "opacity-100 translate-y-0"
             : "opacity-0 -translate-y-3 pointer-events-none"

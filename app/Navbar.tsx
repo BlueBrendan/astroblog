@@ -2,27 +2,29 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useIsMobile } from "./isMobile";
 
 const links = [
-  { href: "/", label: "Astrophotography" },
-  { href: "/landscapes", label: "Landscapes" },
+  { href: "/", label: "Astro" },
+  { href: "/landscapes", label: "Landscape" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
+  const isMobile = useIsMobile();
 
   return (
     <nav className="sticky top-0 z-40 bg-background">
-      <div className="max-w-6xl mx-auto px-4 sm:px-8 h-16 flex items-center gap-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-center gap-8">
         {links.map((link) => {
           const isActive = pathname === link.href;
           return (
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors select-none ${
+              className={`text-${isMobile ? "xs" : "s"} transition-colors select-none ${
                 isActive
                   ? "text-white"
                   : "text-gray-400 hover:text-white/80"
