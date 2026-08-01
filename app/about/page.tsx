@@ -1,24 +1,22 @@
+"use client";
+
 import Image from "next/image";
 import Navbar from "../Navbar";
 import FadeIn from "../FadeIn";
 import { authorPhotos } from "../authorPhotos";
 import Link from 'next/link';
-import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: "Brendan Chou | Astrophotography & Landscape Photography",
-  description: "Astrophotography and landscape photography portfolio featuring deep-sky and wide-field images shot across California and Nevada, including Yosemite, Joshua Tree, Death Valley, and Lassen National Park.",
-};
+import { useIsMobile } from "../isMobile";
 
 export default function About() {
-
+  const isMobile = useIsMobile();
+  const fontSize = isMobile ? 'text-[12px]' : 'text-m';
   return (
     <>
       <Navbar />
-      <div className="max-w-6xl mx-auto px-4 sm:px-8 py-12 ">
-        <h1 className="text-3xl font-bold leading-tight mb-8 select-none">About Me</h1>
-        <div className="space-y-10" style={{caretColor: "transparent"}}>
-          <p className="text-m leading-relaxed">
+      <div className="max-w-6xl mx-auto px-4 sm:px-8 py-6 ">
+        <h1 className={`${isMobile ? "text-xl ": "text-3xl"} font-bold leading-tight mb-4 select-none`}>About Me</h1>
+        <div className={`${isMobile ? "space-y-6" : "space-y-10"}`} style={{caretColor: "transparent"}}>
+          <p className={`${fontSize} leading-relaxed`}>
             I'm an astrophotographer and landscape photographer based in the
             San Gabriel Valley/Los Angeles area. I first took an interest in
             photography in 2014 and have shot a wide variety of genres like
@@ -37,7 +35,7 @@ export default function About() {
               {authorPhotos[0].description}
             </p>
           </FadeIn>
-          <p className="text-m leading-relaxed">
+          <p className={`${fontSize} leading-relaxed`}>
             Over the last 2 years, I've explored much of California in
             search of clear horizons and pristine dark skies. My pursuit for
             the best shooting locations has taken me to Yosemite, Joshua
@@ -64,7 +62,7 @@ export default function About() {
               {authorPhotos[1].description}
             </p>
           </FadeIn>
-          <p className="text-m leading-relaxed">
+          <p className={`${fontSize} leading-relaxed`}>
             What draws me to the night sky is the surreal and otherworldly
             nature of the images. Being able to pull out vivid colors,
             stars, and rich dust trails of nebulas and galaxies right here
@@ -118,7 +116,7 @@ export default function About() {
               {authorPhotos[4].description}
             </p>
           </FadeIn>
-          <p className="text-m leading-relaxed">
+          <p className={`${fontSize} leading-relaxed`}>
             If you're interested in prints, a shoot at a dark-sky location, or have other inquiries, feel free to reach out via the <Link href="/contact" className="hover:text-gray-400  transition-colors">Contact Form</Link>.
           </p>
         </div>
