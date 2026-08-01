@@ -1,7 +1,8 @@
 import { useIsMobile } from "./isMobile";
+import type { Photo } from "./types";
+import { Dispatch, SetStateAction } from "react";
 
-
-export const Tooltip = ({photo, showInfo, setShowInfo}: {photo: any, showInfo: any, setShowInfo: any}) => {
+export const Tooltip = ({photo, showInfo, setShowInfo}: {photo: Photo, showInfo: boolean, setShowInfo: Dispatch<SetStateAction<boolean>>}) => {
     const isMobile = useIsMobile();
     const infoHandlers = 
     isMobile

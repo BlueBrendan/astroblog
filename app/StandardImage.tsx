@@ -1,13 +1,15 @@
 import Image from "next/image";
 import FadeIn from "./FadeIn";
+import type { Photo } from "./types";
+import { Dispatch, SetStateAction } from "react";
 
 export const StandardImage = ({
   photo,
   setSelected,
   index,
 }: {
-  photo: any;
-  setSelected: any;
+  photo: Photo;
+  setSelected: Dispatch<SetStateAction<number | null>>;
   index: number;
 }) => {
   return (

@@ -5,18 +5,9 @@ import { FeaturedImage } from "./FeaturedImage";
 import { StandardImage } from "./StandardImage";
 import { SelectedImage } from "./SelectedImage";
 import { useIsMobile } from "./isMobile";
+import type { Gallery } from "./types";
 
-interface PhotoItem {
-  src: string,
-  year: number,
-  alt: string,
-  featured?: boolean,
-}
-interface GalleryType {
-  photos: PhotoItem[]
-};
-
-export default function Gallery({photos}: GalleryType) {
+export default function Gallery({photos}: Gallery) {
   const [selected, setSelected] = useState<number | null>(null);
   const [visible, setVisible] = useState(false);
   const isMobile = useIsMobile();
@@ -61,7 +52,7 @@ export default function Gallery({photos}: GalleryType) {
       )}
     </div>
     {selected !== null && (
-      <SelectedImage photos={photos} visible={visible} selected={selected} close={close}/>
+      <SelectedImage photo={photos[selected]} visible={visible} close={close}/>
     )}
     </>
   );

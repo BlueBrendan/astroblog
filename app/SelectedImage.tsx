@@ -1,34 +1,27 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useIsMobile } from "./isMobile";
 import { Tooltip } from "./Tooltip";
+import type { Photo } from "./types";
 
 export const SelectedImage = ({
-  photos,
+  photo,
   visible,
-  selected,
   close,
 }: {
-  photos: any;
+  photo: Photo;
   visible: boolean;
-  selected: number;
-  close: any;
+  close: () => void;
 }) => {
     const [loaded, setLoaded] = useState(false);
     const [showInfo, setShowInfo] = useState(false);
-    const photo = photos[selected];
     const isMobile = useIsMobile();
     const landscapeSize = isMobile ? "w-[100vw] h-auto" : "w-auto h-[92vh]";
     const portraitSize = isMobile ? "w-[100vw] h-auto" : "w-auto h-[100vh]";
     const landscapeAspectRatio = isMobile ? "7 / 5" : "3 / 2";
     const verticalAspectRatio = isMobile ? "3 / 5" : "2 / 3";
-
-    useEffect(() => {
-        setLoaded(false);
-        setShowInfo(false);
-    }, [selected]);
 
   return (
     <div
@@ -51,7 +44,7 @@ export const SelectedImage = ({
                 loaded ? "opacity-100" : "opacity-0"
             }`}
         />
-        {!loaded && !photo.blurDataURL && (
+        {!loaded && (
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="h-8 w-8 border-2 border-white/40 border-t-white rounded-full animate-spin" />
           </div>

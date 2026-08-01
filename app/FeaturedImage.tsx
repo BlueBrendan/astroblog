@@ -1,7 +1,9 @@
 import Image from "next/image";
 import FadeIn from "./FadeIn";
+import type { Photo } from "./types";
+import { Dispatch, SetStateAction } from "react";
 
-export const FeaturedImage = ({photo, setSelected, index}: {photo: any, setSelected: any, index: number}) => {
+export const FeaturedImage = ({photo, setSelected, index}: {photo: Photo, setSelected: Dispatch<SetStateAction<number | null>>, index: number}) => {
     return (
         <FadeIn className="col-span-1 sm:col-span-2 lg:col-span-3 row-span-2" key={photo.src} delay={(index % 3) * 100}>
             <div
