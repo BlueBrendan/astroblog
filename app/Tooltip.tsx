@@ -9,10 +9,11 @@ export const Tooltip = ({photo, showInfo, setShowInfo}: {photo: Photo, showInfo:
       ?  { onClick: () => setShowInfo((v) => !v) }
       : 
     {
-          onMouseEnter: () => setShowInfo(true),
-          onMouseLeave: () => setShowInfo(false),
+        onMouseEnter: () => setShowInfo(true),
+        onMouseLeave: () => setShowInfo(false),
     };
-    const fontSize = isMobile ? 'text-xs' : 'text-sm'
+    const titleSize = isMobile ? 'text-[13px]': 'text-m'
+    const fontSize = isMobile ? 'text-[10px]' : 'text-sm'
 
     return (
         <div
@@ -22,19 +23,19 @@ export const Tooltip = ({photo, showInfo, setShowInfo}: {photo: Photo, showInfo:
         >
             <button
                 {...(isMobile ? infoHandlers : {})}
-                className={`flex items-center justify-center ${isMobile ? 'h-5 w-5': 'h-8 w-8'} rounded-full bg-black/50 backdrop-blur-sm text-white/90 hover:bg-black/70 transition-colors outline-none"
+                className={`flex items-center justify-center ${isMobile ? 'h-4 w-4': 'h-8 w-8'} rounded-full bg-black/50 backdrop-blur-sm text-white/90 hover:bg-black/70 transition-colors outline-none"
                 aria-label="Image details"`}
                 >
                 <span className={`${fontSize} font-serif italic`}>i</span>
             </button>
             <div
-                className={`absolute  ${isMobile ? 'top-6': 'top-10'} right-0 rounded-lg bg-black/80 backdrop-blur-md ${isMobile ? 'p-2.5 w-42': 'p-4 w-64'} text-white transition-all duration-200 ease-out ${
+                className={`absolute  ${isMobile ? 'top-6': 'top-10'} right-0 rounded-lg bg-black/80 backdrop-blur-md ${isMobile ? 'p-2 w-42': 'p-4 w-64'} text-white transition-all duration-200 ease-out ${
                     showInfo
                     ? "opacity-100 scale-100"
                     : "opacity-0 scale-95 pointer-events-none"
                 }`}
             >
-                <h3 className="text-m font-medium">{photo.title}</h3>
+                <h3 className={`${titleSize} font-medium`}>{photo.title}</h3>
                 {photo.year && (
                     <p className={`${fontSize} text-gray-400 mt-0.5`}>{photo.year}</p>
                 )}
