@@ -35,12 +35,12 @@ export const SelectedImage = ({
             src={photo.src}
             alt={photo.alt}
             fill
-            sizes="3000px"
+            sizes="2048px"
             placeholder={"empty"}
-            quality={85}
+            quality={90}
             onLoad={() => setLoaded(true)}
             priority
-            className={`object-cover transition-opacity duration-500 ease-out ${
+            className={`object-cover transition-opacity duration-350 ease-out ${
                 loaded ? "opacity-100" : "opacity-0"
             }`}
         />
