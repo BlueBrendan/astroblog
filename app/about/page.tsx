@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Navbar from "../Navbar";
 import FadeIn from "../FadeIn";
 import { authorPhotos } from "../authorPhotos";
 import Link from 'next/link';
@@ -14,7 +13,6 @@ export default function About() {
 
   return (
     <>
-      <Navbar />
       <div className="max-w-6xl mx-auto px-4 sm:px-8 py-2 ">
         <h1 className={`${isMobile ? "text-xl ": "text-3xl"} font-bold leading-tight mb-4 select-none`}>About Me</h1>
         <div className={`${isMobile ? "space-y-6" : "space-y-10"}`} style={{caretColor: "transparent"}}>
@@ -55,7 +53,7 @@ export default function About() {
                 alt={authorPhotos[1].alt}
                 draggable={false}
                 fill
-                quality={90}
+                quality={85}
                 sizes="(max-width: 640px) 100vw"
                 className="object-cover"
               />
@@ -92,7 +90,7 @@ export default function About() {
                 alt={authorPhotos[3].alt}
                 draggable={false}
                 fill
-                quality={90}
+                quality={85}
                 sizes="(max-width: 640px) 100vw"
                 className="object-cover"
               />
@@ -109,7 +107,7 @@ export default function About() {
                 alt={authorPhotos[4].alt}
                 draggable={false}
                 fill
-                quality={90}
+                quality={85}
                 sizes="(max-width: 640px) 100vw"
                 className="object-cover"
               />

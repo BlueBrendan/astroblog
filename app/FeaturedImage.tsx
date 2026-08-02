@@ -21,7 +21,7 @@ export const FeaturedImage = ({photo, setSelected, index}: {photo: Photo, setSel
                     draggable={false}
                     fill
                     quality={85}
-                    sizes="(max-width: 840px) 100vw, (max-width: 1024px) 66vw, 66vw"
+                    sizes="(max-width: 840px) 100vw, (max-width: 1024px) 70vw, 70vw"
                     className="object-cover hover:scale-102 transition-transform select-none"
                 />
                 </button>

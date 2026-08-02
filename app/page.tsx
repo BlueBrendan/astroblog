@@ -1,5 +1,4 @@
 import Gallery from "./Gallery";
-import Navbar from "./Navbar";
 import { astroPhotos } from "./astroPhotos";
 import { Metadata } from 'next';
 
@@ -11,7 +10,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <Navbar/>
       <Gallery photos={astroPhotos}/>
     </>
   );

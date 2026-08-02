@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useIsMobile } from "./isMobile";
 
 const links = [
   { href: "/", label: "Astro" },
@@ -13,7 +12,6 @@ const links = [
 
 export default function Navbar() {
   const pathname = usePathname();
-  const isMobile = useIsMobile();
 
   return (
     <nav className="sticky top-0 z-40 bg-background">
@@ -24,7 +22,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-${isMobile ? "xs" : "s"} transition-colors select-none ${
+              className={`text-xs sm:text-sm transition-colors select-none ${
                 isActive
                   ? "text-white"
                   : "text-gray-400 hover:text-white/80"
