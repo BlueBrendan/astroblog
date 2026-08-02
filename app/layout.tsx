@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Brendan Chou | Portfolio",
+  title: "Astrophotography and Landscape Portfolio",
   description: "Brendan Chou's astrophotography and landscape photography portfolio",
 };
 

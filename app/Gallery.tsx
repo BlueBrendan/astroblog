@@ -42,7 +42,7 @@ export default function Gallery({photos}: Gallery) {
 
   return (
     <>
-    <div className="p-2 sm:p-8 lg:p-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" style={{caretColor: "transparent"}}>
+    <div className="p-4 sm:p-4 lg:p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-2" style={{caretColor: "transparent"}}>
       {photos.map((photo, i) =>
         photo.featured && !isMobile ? (
           <FeaturedImage key={i} photo={photo} setSelected={setSelected} index={i}/>
