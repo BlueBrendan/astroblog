@@ -13,12 +13,11 @@ export const AboutPage = () => {
 
     return (
         <>
-        <div className="max-w-6xl mx-auto px-4 sm:px-8 py-2 ">
-            <h1 className={`${isMobile ? "text-xl ": "text-3xl"} font-bold leading-tight mb-4 select-none`}>About Me</h1>
+        <div className="max-w-6xl mx-auto px-4 sm:px-8 py-6 ">
             <div className={`${isMobile ? "space-y-6" : "space-y-10"}`} style={{caretColor: "transparent"}}>
             <p className={`${fontSize} leading-relaxed`}>
-                I'm an astrophotographer and landscape photographer based in the
-                San Gabriel Valley/Los Angeles area. I first took an interest in
+                I'm Brendan, an astro and landscape photographer based in the
+                Los Angeles area. I first took an interest in
                 photography in 2014 and have shot a wide variety of genres like
                 landscape, studio portraiture, sports, and wildlife, but in the
                 last two years I've truly found my niche in wide-field and deep
@@ -69,7 +68,7 @@ export const AboutPage = () => {
                 on Earth is something that has never ceased to amaze me. Looking
                 up towards the incredibly rich field of stars and Milky Way in a
                 true dark sky location is something everyone should experience
-                at least once in their lifetime.
+                at least once!
             </p>
             {/* Trona Pinnacles Timelapse */}
             <FadeIn>
