@@ -13,7 +13,7 @@ export const AboutPage = () => {
 
     return (
         <>
-        <div className="max-w-6xl mx-auto px-4 sm:px-8 py-6 ">
+        <div className="max-w-6xl mx-auto px-8 lg:px-12 py-2 lg:py-6">
             <div className={`${isMobile ? "space-y-6" : "space-y-10"}`} style={{caretColor: "transparent"}}>
             <p className={`${fontSize} leading-relaxed`}>
                 I'm Brendan, an astro and landscape photographer based in the
